@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 
-<body class="is-preload">
+<body class="is-preload" onload="initialize()">
 
 	<!-- Header -->
 	<section id="header">
@@ -171,7 +171,9 @@
 		</form>
 		<br>
 	</section>
-
+	<br><br>
+	<div id="map" style="width:90%; height:450px; margin: auto; border-radius: 5px"></div>
+	<br><br>
 	<!-- Five -->
 	<!-- <section id="five" class="main style1 special">
 				<h4>Form</h4>
@@ -578,7 +580,17 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			}
 		}
 	</script>
-
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwQWFetDPScrT8zVUU4D3Jr3kCL369HiQ&callback=initMap"
+		async defer></script>
+	<script>
+		var map;
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: { lat: -34.397, lng: 150.644 },
+				zoom: 8
+			});
+		}
+	</script>
 </body>
 
 </html>
