@@ -582,13 +582,17 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwQWFetDPScrT8zVUU4D3Jr3kCL369HiQ&callback=initMap"
 		async defer></script>
+
 	<script>
-		var map;
+		// Initialize and add the map
 		function initMap() {
-			map = new google.maps.Map(document.getElementById('map'), {
-				center: { lat: 37.549133, lng: 127.183719 },
-				zoom: 16
-			});
+			// The location of Uluru
+			var uluru = { lat: 37.549133, lng: 127.183719 };
+			// The map, centered at Uluru
+			var map = new google.maps.Map(
+				document.getElementById('map'), { zoom: 16, center: uluru });
+			// The marker, positioned at Uluru
+			var marker = new google.maps.Marker({ position: uluru, map: map });
 		}
 	</script>
 </body>
